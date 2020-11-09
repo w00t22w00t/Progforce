@@ -1,0 +1,666 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+p, li, span, div, button,
+h1, h2, h3, h4 {
+	font-family: "ProximaNova-Regular", serif;
+	font-style: normal;
+	font-weight: normal;
+}
+a {
+	text-decoration: none;
+}
+button,div {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+h2 {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.none {
+	display: none !important;
+}
+
+/* Обертка */
+
+.main-container {
+	max-width: 1920px;
+	width: 90%;
+	margin: 20px auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+/* Галерея */
+.gallery {
+	width: 70%;
+	border: 1px solid #000;
+}
+
+.gallery-head {
+	margin-top: 20px;
+}
+
+.gallery-option {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 90%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+
+/* Custom select */
+
+.select-genre { 
+display: block; 
+font-size: 14px; 
+font-family: sans-serif; 
+color: #a2a2a2; 
+line-height: 1.3; 
+padding: 5px 25px 5px 5px; 
+width: 100%; 
+max-width: 100%; 
+-webkit-box-sizing: border-box; 
+        box-sizing: border-box; 
+margin: 0; 
+border: 1px solid #aaa;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ appearance: none;
+ background-color: #fff; 
+background-image: url('../img/arrow-down.png'); 
+background-repeat: no-repeat, repeat;
+background-position: right .7em top 50%, 0 0;
+background-size: .8em auto, 100%; 
+cursor: pointer;
+} 
+ .select-genre::-ms-expand { display: none; } 
+ .select-genre:hover { border-color: #888; } 
+ .select-genre option { font-weight:normal; } 
+ *[dir="rtl"] .select-genre, :root:lang(ar) .select-genre, :root:lang(iw) .select-genre { 
+background-position: left .7em top 50%, 0 0; 
+padding: .6em .8em .5em 1.4em; 
+}
+
+/* End custom select */
+
+ /* Карточки  */
+
+.gallery-type {
+	display: inline-block;
+}
+
+.gallery-type img {
+	padding: 0 4px;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform .2s ease-in;
+	transition: -webkit-transform .2s ease-in;
+	-o-transition: transform .2s ease-in;
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+.gallery-type img.selected {
+	border: 1px solid #000000;
+}
+
+.gallery-type img:hover {
+	-webkit-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	        transform: scale(1.2);
+}
+
+.gallery-cards {
+	width: 90%;
+	margin: 20px auto;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 30px;
+	grid-row-gap: 2em;
+}
+
+.gallery-cards.to-list{
+	-ms-grid-columns: (1fr)[1];
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.card {
+	padding: 20px;
+	background: #a2a2a2;
+	border: 1px solid #000000;
+	border-radius: 20px;
+	-webkit-transition: -webkit-transform .2s ease-in;
+	transition: -webkit-transform .2s ease-in;
+	-o-transition: transform .2s ease-in;
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+	cursor: pointer;
+}
+
+.gallery-cards.to-list .card {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.card:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+}
+
+.gallery-cards.to-list .card:hover {
+	-webkit-transform: scale(1.05);
+	    -ms-transform: scale(1.05);
+	        transform: scale(1.05);
+}
+
+.card-img {
+    margin: 10px;
+    padding: 0;
+    position: relative;
+    width: 90%;
+    height: 160px;
+    border-radius: 3px;
+    background: #ffffff;
+}
+
+.gallery-cards.to-list .card-img {
+	margin: 0;
+	width: 200px;
+	margin-right: 30px;
+}
+
+.card-img img {
+    position: absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width:100%;
+    max-height: 100%;
+}
+
+.card-title {
+	text-align: center;
+}
+
+.gallery-cards.to-list .card-name,
+.gallery-cards.to-list .card-year {
+	display: inline-block;
+}
+
+.card-text {
+	display: none;
+}
+
+.gallery-cards.to-list .card-text {
+	display: block;
+}
+
+.gallery-cards.to-list .card-text p {
+	margin-top: 10px;
+}
+
+
+.to-favourites {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	font-size: 60px;
+	z-index: 10;
+}
+
+.to-favourites.change-state {
+	color: grey;
+}
+
+
+
+/* Избранное */
+.favourites {
+	width: 25%;
+	height: 90vh;
+	border: 1px solid #000;
+}
+
+.favourites-head {
+	margin-top: 20px;
+	position: relative;
+}
+
+.favourites-title:before {
+	content: '\2605';
+	position: absolute;
+	top: 0;
+	left: 20px;
+	color: #a2a2a2;
+}
+
+.favourites-list {
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 20px;
+	list-style-type: '\2192';
+}
+
+.favourites-list .favourites-list-item {
+	margin-left: 20px;
+	margin-bottom: 8px;
+	padding-left: 10px;
+	position: relative;
+	font-size: 20px;
+}
+
+.favourites-list .favourites-list-item::marker {
+	font-size: 22px;
+}
+
+.fav-item-del {
+	position: absolute;
+	top: 0;
+	right: -15px;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform .2s ease-in;
+	transition: -webkit-transform .2s ease-in;
+	-o-transition: transform .2s ease-in;
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+.fav-item-del:hover {
+	-webkit-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	        transform: scale(1.2);
+}
+
+
+
+
+/* Модальное окно */
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0);
+	overflow: hidden;
+	-webkit-transition: background .3s;
+	-o-transition: background .3s;
+	transition: background .3s;
+	z-index: -1;
+}
+
+.modal-window {
+	position: absolute;
+	top: -600px;
+	left: calc(50% - 800px/2);
+	width: 800px;
+	height: 400px;
+	padding: 20px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	background: #ffffff;
+	border: 1px solid #000;
+	border-radius: 5px;
+	-webkit-transition: top .3s ease-in;
+	-o-transition: top .3s ease-in;
+	transition: top .3s ease-in;
+}
+
+.modal-info {
+	width: 30%;
+}
+
+.modal-img {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+}
+
+.modal-year {
+	position: relative;
+    height: 30px;
+    margin-top: 5px;
+    padding-left: 40px;
+    line-height: 30px;
+}
+
+.modal-year .to-favourites {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	font-size: 30px;
+	cursor: pointer;
+	-webkit-transition: -webkit-transform .3s ease-in;
+	transition: -webkit-transform .3s ease-in;
+	-o-transition: transform .3s ease-in;
+	transition: transform .3s ease-in;
+	transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+}
+
+.modal-year .to-favourites:hover {
+	-webkit-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	        transform: scale(1.2);
+}
+
+.modal-genres {
+	margin-top: 5px;
+}
+
+.modal-text{
+	width: 60%;
+}
+
+.modal-title {
+	font-size: 24px;
+}
+
+.modal-desc,
+.modal-director,
+.modal-starring {
+	margin-top: 20px;
+}
+
+body.open {
+	overflow: hidden;
+}
+
+.modal.open-z .modal-overlay {
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 50;
+}
+
+body.open .modal .modal-window {
+	top: 100px;
+}
+
+
+.modal-exit {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+ /* Избранное кнопка бургер  */
+
+.favourites-hamburger {
+	position: relative;
+	overflow: hidden;
+	width: 28px;
+	height: 28px;
+	font-size: 0;
+	text-indent: -9999px;
+	border-radius: 50%;
+	-webkit-box-shadow: none;
+			box-shadow: none;
+	display: none;
+  }
+   
+  .favourites-hamburger:focus {
+	outline: none;
+  }
+  
+  
+   
+  .favourites-hamburger span::before,
+  .favourites-hamburger span::after {
+	position: absolute;
+	display: block;
+	left: 7px;
+	right: 7px;
+	height: 2px;
+	background-color: #fff;
+	content: "";
+	border-radius: 2px;
+  }
+   
+  .favourites-hamburger span::before {
+	top: 10px;
+  }
+   
+  .favourites-hamburger span::after {
+	bottom: 10px;
+  }
+  
+  
+  .favourites-hamburger {
+	background-color: #333333;
+  }
+   
+  .favourites-hamburger span {
+	-webkit-transition: background 0s 0.3s;
+	-o-transition: background 0s 0.3s;
+	transition: background 0s 0.3s;
+  }
+   
+  .favourites-hamburger span::before,
+  .favourites-hamburger span::after {
+	-webkit-transition-duration: 0.3s, 0.3s;
+		 -o-transition-duration: 0.3s, 0.3s;
+			transition-duration: 0.3s, 0.3s;
+	-webkit-transition-delay: 0.3s, 0s;
+		 -o-transition-delay: 0.3s, 0s;
+			transition-delay: 0.3s, 0s;
+  }
+   
+  .favourites-hamburger span::before {
+	-webkit-transition-property: top, -webkit-transform;
+	transition-property: top, -webkit-transform;
+	-o-transition-property: top, transform;
+	transition-property: top, transform;
+	transition-property: top, transform, -webkit-transform;
+  }
+   
+  .favourites-hamburger span::after {
+	-webkit-transition-property: bottom, -webkit-transform;
+	transition-property: bottom, -webkit-transform;
+	-o-transition-property: bottom, transform;
+	transition-property: bottom, transform;
+	transition-property: bottom, transform, -webkit-transform;
+  }
+   
+  /* состояние active при открытом меню  */
+   
+  .main-container.is-active .favourites-hamburger span::before {
+	top: 13px;
+	-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+  }
+   
+  .main-container.is-active .favourites-hamburger span::after {
+	bottom: 13px;
+	-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+  }
+   
+  .main-container.is-active .favourites-hamburger span::before,
+  .main-container.is-active .favourites-hamburger span::after {
+	-webkit-transition-delay: 0s, 0.3s;
+		 -o-transition-delay: 0s, 0.3s;
+			transition-delay: 0s, 0.3s;
+  }
+
+
+
+
+@media screen and (max-width: 1200px){
+
+	.main-container {
+		margin: 0;
+		position: relative;
+		height: 100%;
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.gallery {
+		width: 100%;
+		border: none;
+	}
+
+	.favourites {
+		position: absolute;
+		top: 0;
+		right: -480px;
+		min-height: 100%;
+		z-index: 25;
+		background-color: #ffffff;
+		-webkit-transition: right .5s ease-in;
+		-o-transition: right .5s ease-in;
+		transition: right .5s ease-in;
+	}
+
+	.favourites {
+		width: 100%;
+		right: -100%;
+	}
+	.favourites-wrap {
+		max-width: 90%;
+	}
+	.favourites-list {
+		width: 100%;
+	}
+
+	.favourites-title:before {
+		display: none;
+	}
+
+	.favourites-head {
+		position: absolute;
+		top: 0;
+		right: 100%;
+		z-index: 100;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		width: 240px;
+		-webkit-transition: right .5s ease-in;
+		-o-transition: right .5s ease-in;
+		transition: right .5s ease-in;
+	}
+	.favourites-hamburger {
+		display: block;
+		margin-right: 10px;
+	}
+
+	.main-container.is-active .favourites {
+		right: 0;
+	}
+	.main-container.is-active .favourites-head {
+		right: 40px;
+	}
+
+	.favourites-list {
+		margin-top: 88px;
+	}
+
+	.favourites-list .favourites-list-item {
+		margin: 0 auto;
+		width: 80%;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	.gallery-cards {
+		-ms-grid-columns: (1fr)[3];
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.modal-window {
+		top: -100vh;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	body.open .modal .modal-window {
+		top: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.gallery-cards {
+		-ms-grid-columns: (1fr)[2];
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.card-img {
+		height: 120px;
+	}
+
+	.favourites-head {
+		right: 65%;
+	}
+	.main-container.is-active .favourites-head {
+		right: 10%;
+	}
+	.favourites-title {
+		display: none;
+	}
+
+	.main-container.is-active .favourites-title {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.favourites-head {
+		right: 45%;
+	}
+
+	.gallery-cards.to-list .card {
+		padding: 10px;
+		width: 80%;
+	}
+	.gallery-cards.to-list .card-img {
+		margin-right: 10px;
+	}
+
+	.to-favourites {
+		top: -17px;
+		right: -17px;
+		font-size: 40px;
+	}
+}
