@@ -20,25 +20,20 @@
 		container.classList.toggle("is-active");
 	});
 
-	let request = new XMLHttpRequest();
-	request.open('GET', `http://my-json-server.typicode.com/moviedb-tech/movies/list/`);
-	request.setRequestHeader('Content-type', 'application/json; charser=utf-8');
-	request.send();
-
-	request.addEventListener('readystatechange',(e) => {
-		if (request.readyState === 4) {
-			if (request.status == 200) {
-				let data = JSON.parse(request.response);
-				data.forEach(function(item, index){
-					listOfAllGenres.push(...item.genres);
-					printCards(item);
-				});
-				showModal(document.querySelectorAll('.card'), data);
-				printSelect(listOfAllGenres);
-				downloadingFavList();
-			}
-		}
-	});
+	(async () => {
+        	let url = 'http://my-json-server.typicode.com/moviedb-tech/movies/list/';
+        	let response = await fetch(url);
+        	let data = await response.json(); // читаем ответ в формате JSON
+        	if(response.ok){
+            		data.forEach(function(item, index){
+                	listOfAllGenres.push(...item.genres);
+                	printCards(item);
+            	});
+            	showModal(document.querySelectorAll('.card'), data);
+            	printSelect(listOfAllGenres);
+            	downloadingFavList();
+        	}
+    	})()
 
 	function printSelect(list){
 		list.forEach(function(elem, index){
